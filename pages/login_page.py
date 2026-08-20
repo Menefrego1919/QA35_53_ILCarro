@@ -8,7 +8,7 @@ class LoginPage:
     PASSWORD_INPUT = (By.XPATH, "//input[@name='password']")
     YALLA_BTN = (By.XPATH, "//button[@type='submit']")
     CONFIRMATION_TEXT = (By.CSS_SELECTOR,"h3")
-    OK_BTN = (By.XPATH, "//*[text(),= 'Ok']
+    OK_BTN = (By.XPATH,"//*button[@text ='OK']")
 
     def __init__(self, driver):
         self.driver = driver
@@ -33,7 +33,7 @@ class LoginPage:
         self.submit_login()
 
     def loggin_success_text(self):
-     #   return self.driver.find_element(*self.CONFIRMATION_TEXT).text
+        return self.driver.find_element(*self.CONFIRMATION_TEXT).text
 
     def close_window(self):
         self.driver.find_element(*self.OK_BTN).click()
